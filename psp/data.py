@@ -65,7 +65,7 @@ def replace_file(data_file, index, in_data):
         if toc[i] == index:
             toc[i+1] = len(in_data)
     data.seek(0)
-    data.write(toc.tostring())
+    data.write(toc.tobytes())
     data.seek(toc[index] * 2048)
     data.write(in_data)
     data.seek(toc[file_count] * 2048)
